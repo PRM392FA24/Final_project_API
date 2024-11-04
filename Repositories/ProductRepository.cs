@@ -37,7 +37,7 @@ namespace Repositories
                                             .ThenInclude(a => a.En)
                                         .Include(f => f.RefFeedbacks)
                                             .ThenInclude(s => s.Feedback)
-                                        .FirstOrDefaultAsync();
+                                        .FirstOrDefaultAsync(x => x.ProductId == id);
 
         public async Task<List<Product>> GetCustomize(string UserID) 
             => await this._context.Products.Where(x => x.CustomBy.Equals(UserID))

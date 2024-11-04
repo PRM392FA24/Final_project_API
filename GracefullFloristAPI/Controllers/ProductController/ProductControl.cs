@@ -20,23 +20,23 @@ namespace GracefullFloristAPI.Controllers.ProductController
             _service = service;
         }
 
-        [Route("{User}")]
-        [HttpGet]
-        public async Task<IActionResult> GetCustomize([FromRoute] string User)
-        {
-            ResponseType<List<Product>> response = new ResponseType<List<Product>>();
-            try
-            {
-                response.Data = await this._service.GetCustomize(User);
-                response.message = "success";
-                return Ok(response);
-            }
-            catch (Exception ex)
-            {
-                response.message = ex.Message;
-                return BadRequest(response);
-            }
-        }
+        //[Route("{User}")]
+        //[HttpGet]
+        //public async Task<IActionResult> GetCustomize([FromRoute] string User)
+        //{
+        //    ResponseType<List<Product>> response = new ResponseType<List<Product>>();
+        //    try
+        //    {
+        //        response.Data = await this._service.GetCustomize(User);
+        //        response.message = "success";
+        //        return Ok(response);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        response.message = ex.Message;
+        //        return BadRequest(response);
+        //    }
+        //}
 
 
         [Route("All")]

@@ -33,7 +33,7 @@ builder.Services.AddAuthentication(option =>
 
 // Add services to the container.
 builder.Services.AddDbContext<GRACEFULLFLORISTContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("server")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
 
 builder.Services.AddDbContext<GRACEFULLFLORISTContext>(options => options.UseQueryTrackingBehavior(Microsoft.EntityFrameworkCore.QueryTrackingBehavior.NoTracking));
 builder.Services.AddControllers().AddJsonOptions(
